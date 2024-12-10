@@ -52,13 +52,13 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp N7>, <&kp F8>;
                 };
-                td8: tap_dance_7 {
+                td7: tap_dance_7 {
                         compatible = "zmk, behavior-tap-dance";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&kp N8>, <&kp F9>;
                 };
-                td9: tap_dance_8 {
+                td8: tap_dance_8 {
                         compatible = "zmk, behavior-tap-dance";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
