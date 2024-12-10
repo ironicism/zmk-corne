@@ -85,22 +85,22 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BACKSLASH
    &kp ESCAPE &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp QMARK
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
-                  &kp  &kp DEL &kp SPACE   &kp RET &kp BACKSPACE &kp RALT
+                  &kp LGUI &kp DEL &kp SPACE   &kp RET &kp BACKSPACE &kp RALT
                         >;
                 };
-//                lower_layer {
+                lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
-//                        bindings = <
-//   &kp F1    &td0       &td1       &td2       &td3       &td4         &td5   &td6   &td7 &td8    &td9 &kp F12
-//   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-//   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-//                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-//                        >;
-//                };
+                        bindings = <
+   &kp F1    &td0       &td1       &td2       &td3       &td4         &td5   &td6   &td7 &td8    &td9 &kp F12
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+8th                        >;
+                };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
