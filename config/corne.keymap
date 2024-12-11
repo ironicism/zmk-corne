@@ -103,21 +103,21 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BACKSLASH
    &kp ESCAPE &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp QMARK
    &td12 &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RIGHT_SHIFT
-                  &kp LEFT_CONTROL &kp DEL &kp SPACE   &kp RET &kp BACKSPACE &tog 1
+                  &kp LEFT_CONTROL &kp DEL &kp SPACE   &kp RET &kp BACKSPACE &to 1
                         >;
                 };
                 
                 lower_layer {
-// -----------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------;-----------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &td10    &td0       &td1       &td2       &td3       &td4         &td5   &td6   &td7 &td8    &td9 &td11
-   &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &trans &trans   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &kp LEFT_CONTROL       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &kp RIGHT_ALT
-                                    &tog 0     &kp DEL       &kp SPACE      &kp RET  &kp BACKSPACE   &tog 2
+   &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &trans &trans   &trans &kp UP &kp DOWN &kp LEFT &kp RIGHT &trans
+   &kp LSHFT  &kp LEFT_CONTROL       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &kp RIGHT_ALT &kp RIGHT_SHIFT
+                                    &to 0     &kp DEL       &kp SPACE      &kp RET  &kp BACKSPACE   &to 2
                         >;
                 };
 
@@ -131,7 +131,7 @@
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &tog 0 &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                             &to 0 &trans   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
         };
