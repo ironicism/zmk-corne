@@ -121,7 +121,7 @@
                         bindings = <
    &td10    &td0       &td1       &td2       &td3       &td4         &td5   &td6   &td7 &td8    &td9 &td11
    &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &trans &trans   &trans &kp UP &kp DOWN &kp LEFT &kp RIGHT &trans
-   &kp LSHFT  &kp LEFT_CONTROL  &trans &trans   &kp LEFT  &kp RIGHT                &kp UP   &kp DOWN   &trans &trans    &kp RIGHT_ALT &to 3
+   &trans  &kp LEFT_CONTROL  &trans &trans   &kp LEFT  &kp RIGHT                &kp UP   &kp DOWN   &trans &trans    &kp RIGHT_ALT &kp RSHIFT
                                     &to 0     &trans       &trans      &trans  &trans   &to 2
                         >;
                 };
