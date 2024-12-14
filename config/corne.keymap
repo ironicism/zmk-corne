@@ -99,15 +99,11 @@
                         bindings = <&kp LEFT_CONTROL>, <&kp LEFT_ALT>;
                 };
 
-        };
-
-        combos {
-                compatible = "zmk,combos";
-                combo_delete {
-                        timeout-ms = <100>;
-                        slow-release;
-                        key-positions = <24 40>;
-                        bindings = <&kp DEL>;
+                shft_bckspc: shift_backspace {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp BACKSPACE>, <&kp DEL>;
+                        bindings = <(MOD_LSFT)>;                        
                 };
         };
 
@@ -125,7 +121,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BACKSLASH
    &kp ESCAPE &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SINGLE_QUOTE
    &td12 &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RIGHT_SHIFT
-                  &kp LGUI &kp SPACE &td_ctrl_alt   &kp RET &kp BACKSPACE &to 1
+                  &kp LGUI &kp SPACE &td_ctrl_alt   &kp RET &shft_bckspc &to 1
                         >;
                 };
                 
