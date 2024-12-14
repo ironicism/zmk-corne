@@ -95,7 +95,7 @@
                 td_ctrl_alt: td_ctrl_alt {
                         compatible = "zmk,behavior-tap-dance";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&kp LEFT_CONTROL>, <&kp LEFT_ALT>;
                 };
 
@@ -105,6 +105,7 @@
                 compatible = "zmk,combos";
                 combo_delete {
                         timeout-ms = <100>;
+                        slow-release = true;
                         key-positions = <24 40>;
                         bindings = <&kp DEL>;
                 };
@@ -112,7 +113,7 @@
 
         keymap {
                 compatible = "zmk,keymap";
-
+                // there's 54 onions in my &^*=-f
                 default_layer {
                         display-name = "QWERTY";
 // -----------------------------------------------------------------------------------------
@@ -136,7 +137,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &td10    &td0       &td1       &td2       &td3       &td4         &td5   &td6   &td7 &td8    &td9 &td11
-   &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &trans &trans   &trans &kp UP &kp DOWN &kp LEFT &kp RIGHT &trans
+   &kp HOME &kp END &trans &trans &kp HOME &kp END    &kp PG_UP &kp PG_DN &trans &trans &trans &trans
    &trans  &kp LEFT_CONTROL  &trans &trans   &kp LEFT  &kp RIGHT &kp UP   &kp DOWN   &trans &trans    &kp RIGHT_ALT &trans
                                     &to 0     &trans       &trans      &trans  &trans   &to 2
                         >;
