@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 #include <dt-bindings/zmk/pointing.h>
@@ -92,6 +92,12 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp LEFT_SHIFT>, <&kp CAPSLOCK>;
                 };
+                td_ctrl_alt: td_ctrl_alt {
+                        compatible = "zmk,behavior-tap-dance";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LEFT_CONTROL>, <&kp LEFT_ALT>;
+                }
 
         };
 
@@ -99,6 +105,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+                        display-name: "QWERTY"
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -108,7 +115,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BACKSLASH
    &kp ESCAPE &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SINGLE_QUOTE
    &td12 &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RIGHT_SHIFT
-                  &kp LEFT_CONTROL &kp SPACE &kp DEL   &kp RET &kp BACKSPACE &to 1
+                  &kp LGUI &kp SPACE &td_ctrl_alt   &kp RET &kp BACKSPACE &to 1
                         >;
                 };
                 
@@ -121,7 +128,7 @@
                         bindings = <
    &td10    &td0       &td1       &td2       &td3       &td4         &td5   &td6   &td7 &td8    &td9 &td11
    &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &trans &trans   &trans &kp UP &kp DOWN &kp LEFT &kp RIGHT &trans
-   &trans  &kp LEFT_CONTROL  &trans &trans   &kp LEFT  &kp RIGHT                &kp UP   &kp DOWN   &trans &trans    &kp RIGHT_ALT &kp RSHIFT
+   &trans  &kp LEFT_CONTROL  &trans &trans   &kp LEFT  &kp RIGHT &kp UP   &kp DOWN   &trans &trans    &kp RIGHT_ALT &trans
                                     &to 0     &trans       &trans      &trans  &trans   &to 2
                         >;
                 };
@@ -134,8 +141,8 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp  TAB  &kp EXCL &mkp LCLK &mmv MOVE_UP &mkp RCLK &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &none &none &mmv MOVE_LEFT &none &mmv MOVE_RIGHT &none      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &mmv MOVE_DOWN   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &to 3
+   &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
+   &kp LSHFT &trans   &trans &none   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &to 3
                              &to 0 &trans   &trans   &trans   &trans    &trans
                         >;
                 };
