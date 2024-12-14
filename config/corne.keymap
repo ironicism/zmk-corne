@@ -101,6 +101,15 @@
 
         };
 
+        combos {
+                compatible = "zmk,combos";
+                combo_delete {
+                        timeout-ms = <100>;
+                        key-positions = <24 40>;
+                        bindings = <&kp DEL>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
