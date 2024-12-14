@@ -105,7 +105,7 @@
                 compatible = "zmk,combos";
                 combo_delete {
                         timeout-ms = <100>;
-                        slow-release = 1;
+                        slow-release;
                         key-positions = <24 40>;
                         bindings = <&kp DEL>;
                 };
