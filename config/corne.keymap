@@ -105,6 +105,13 @@
                         bindings = <&kp BACKSPACE>, <&kp DEL>;
                         mods = <(MOD_LSFT)>;                        
                 };
+
+                ctrl_bracket: ctrl_bracket {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp LBKT>, <&kp RBKT>;
+                        mods = <(MOD_LCTL)>
+                };
         };
 
         keymap {
@@ -118,7 +125,7 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BACKSLASH
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &ctrl_bracket
    &kp ESCAPE &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SINGLE_QUOTE
    &td12 &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RIGHT_SHIFT
                   &kp LGUI &kp SPACE &td_ctrl_alt   &kp RET &shft_bckspc &to 1
@@ -126,6 +133,7 @@
                 };
                 
                 lower_layer {
+                        display-name = "NUMBERS"
 // ------------------------------------------------------------------------------;-----------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -133,22 +141,23 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &td10    &td0       &td1       &td2       &td3       &td4         &td5   &td6   &td7 &td8    &td9 &td11
-   &kp HOME &kp END &trans &trans &kp HOME &kp END    &kp PG_UP &kp PG_DN &trans &trans &trans &trans
-   &trans  &kp LEFT_CONTROL  &trans &trans   &kp LEFT  &kp RIGHT &kp UP   &kp DOWN   &trans &trans    &trans &trans
+   &trans &trans &trans &kp HOME &kp END &trans    &trans &kp PG_UP &kp PG_DN &trans &trans &kp BACKSLASH
+   &trans  &kp LEFT_CONTROL  &trans &kp LEFT   &kp RIGHT  &trans &trans   &kp UP   &kp DOWN &trans    &trans &trans
                                     &to 0     &trans       &trans      &trans  &trans   &to 2
                         >;
                 };
 
                 mouse_layer {
+                        display-name = "MOUSE"
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp  TAB  &kp EXCL &mkp LCLK &mmv MOVE_UP &mkp RCLK &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &none   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &to 3
+   &kp  TAB  &kp EXCL &mkp LCLK &mmv MOVE_UP &mkp RCLK &msc SCRL_UP   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
+   &trans &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
+   &trans &trans   &trans &none   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &to 3
                              &to 0 &trans   &trans   &trans   &trans    &trans
                         >;
                 };
