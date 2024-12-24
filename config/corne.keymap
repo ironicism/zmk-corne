@@ -110,7 +110,7 @@
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
                         bindings = <&kp LBKT>, <&kp RBKT>;
-                        mods = <(MOD_LCTL)>
+                        mods = <(MOD_LCTL)>;
                 };
         };
 
